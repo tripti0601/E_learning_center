@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E learning</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'learn/learn.css' %}" media="screen,projection">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body style="background-color:#e6e2e2de;">
+            
+	<header role="banner" style="background-color:#0486f7;height: 80px;">
+	    <nav class="navbar navbar-expand-md navbar-dark">
+			<div class="container">
+			    <a class="navbar-brand" href="{% url 'home' %}">LOGO</a>
+			    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			    </button>
+							    
+			    <div class="collapse navbar-collapse" id="navbarsExample05" style="font-size:18px;color:white;">
+				    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+				    	<li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Books</a>
+					    <div class="dropdown-menu" aria-labelledby="dropdown04">
+						    <a class="dropdown-item" href="#"  style="color:black;">Physics</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Chemistry</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Biology</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Mathematics</a>
+					    </div>
+					    </li>
+					    <li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Study Material</a>
+					    <div class="dropdown-menu" aria-labelledby="dropdown04">
+					    	<a class="dropdown-item"  href="{% url 'home' %}" style="color:black;"> RS Agrawal</a>
+					    	<a class="dropdown-item"  href="{% url 'home' %}" style="color:black;"> RD Sharma</a>
+						    <a  class="dropdown-item"  href="{% url 'home' %}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black;">NCERT</a>
+						    <ul class="dropdown-menu" aria-labelledby="dropdown05">
+						    	<li><a class="dropdown-item" href="#"  style="color:black;">Class 6</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 7</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 8</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 9</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 10</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 11</a></li>
+							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 12</a></li>	
+						    </ul>
+					    </div>
+					    </li>
+					    <li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Course</a>
+					    <div class="dropdown-menu" aria-labelledby="dropdown04">
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 6</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 7</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 8</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 9</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 10</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 11</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 12</a>
+						    
+					    </div>
+					    </li>
+					    <li class="nav-item dropdown">
+					    <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Exams</a>
+					    <div class="dropdown-menu" aria-labelledby="dropdown04">
+					    	<a class="dropdown-item" href="#"  style="color:black;">IIT JEE</a>
+					    	<a class="dropdown-item" href="#"  style="color:black;">NEETz</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">X board</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">XII board</a>
+					    </div>
+                        </li>
+                        <li>
+                            <form class="form-inline" action="{% url 'search'%}" method="POST">
+					    		{% csrf_token %}
+					    		  <div>
+								     <input type="text" class="input-group-text" id="inputGroup-sizing-lg"  placeholder="Search" name="usr-input">
+								  </div>
+								  <button type="submit" name="search" class="btn btn-danger" style="font-weight: bold;"><i class="fas fa-search"></i></button>
+							</form>
+                        </li>
+					</ul>
+				            
+				</div>
+			</div>
+		</nav>
+    </header>
+    {% if question %}
+        <div id="details-div" class="row">
+        	<div class="col-md-6 mb-5">
+        		<table height="100%">
+					<tr>
+					<td><h4 style="font-size: 19px;"><i class="fas fa-caret-right"></i>{{ question.publication }}
+					      <b>/</b>Class {{ question.std }} <b>/</b>{{ question.unit_name}} <b>/</b>Exercise {{ question.exercise }} <b>/</b>Question {{ question.Question_no }}</h4>
+						Q. <img src="https://latex.codecogs.com/png.latex?{{ question.Question}}" style="width:auto; filter: grayscale(100%);">
+					</td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+					<td><div>
+							<p><i style="font-size: 20px;" class="far fa-eye" id="btnClick" onclick="CountFun();"></i> | {{ question.like }} people liked this Solution</p>
+							<h3><a href="{{ question.get_question_url }}"><i class="far fa-thumbs-up"> Like</i></a> | <i class="fas fa-share-square"></i></h3>
+						</div></td>
+					</tr>
+				</table>
+					
+			</div>
+        	<div class="col-md-4 text-md-center mb-5">
+				<video style="width:calc(83vh);min-width:400px;height: calc(50vh);min-height: 400px;border: 1px solid #c3c3c3;" controls>
+				<source src='media/{{ question.video }}' type='video/mp4'>
+				</video></a>
+			</div>
+        </div>
+    {% endif %}
+    
+	<footer class="site-footer" role="contentinfo" style="background-color: #162337;color: white;padding-top: 1%">
+      <div class="container3">
+        <div class="row mb-12">
+          <div class="col-md-3 mb-5">
+            <ul>
+                <strong style="font-size: 20px;">NCERT</strong>
+				<li>Algebra Class 6 Maths</li>
+				<li>Basic Geometrical Ideas Class 7 Maths</li>
+				<li>Data Handling Class 8 Maths</li>
+				<li>Decimals Class 9 Maths</li>
+				<li>Fractions Class 10 Maths</li>  
+            </ul>
+
+          </div>
+          <div class="col-md-3 mb-5">
+            <ul>
+            	<strong style="font-size: 20px;">RD Sharma</strong>
+				<li>INDEFINITE INTEGRALS</li>
+                <li>DIFFERENTIATION</li>
+                <li>DIFFERENTIAL EQUATION</li>
+                <li>ALGEBRA OF MATRICES</li>
+                <li>ALGEBRA OF VECTORS</li>	
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <ul>
+            	<strong style="font-size: 20px;">Physics</strong>
+				<li>WORK, ENERGY AND POWER</li>
+                <li>ELECTRIC FIELD AND CHARGES</li>
+                <li>MAGNETIC FIELD AND MAGNETISM</li>
+                <li>THERMODYNAMICS</li>
+                <li>OPTICS</li>	
+            </ul>
+          </div>
+          <div class="col-md-3 mb-5">
+            <ul>
+            	<strong style="font-size: 20px;">CHEMISTRY</strong>
+				<li>SOLID STATE</li>
+                <li>ALDEHYDE AND KETONS</li>
+                <li>ELECTROCHEMISTRY</li>
+                <li>P-BLOCK ELEMENTS</li>
+                <li>D-BLOCK ELEMENTS</li>	
+            </ul>
+          </div>
+          
+          
+        </div>
+       </div>
+        <div class="row">
+          <div class="col-12 text-md-center text-left">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
