@@ -5,7 +5,7 @@ from .models import Question_Model
 
 def home_view(request):
     NCERT_question = Question_Model.objects.filter(publication="NCERT")[:3]
-    RD_question = Question_Model.objects.filter(publication="RD Sharma")[:3]
+    RD_question = Question_Model.objects.filter(publication="RD_Sharma_and_RS_Agrawal")[:3]
     return render(request, 'learn/Home.html', 
         {'class12' : NCERT_question,
          'rd_sharma' : RD_question,})
@@ -38,6 +38,15 @@ def  like_view(request, question_id):
 		raise Http404("Solution does not exist")
 	finally:
 		return redirect('home')
+
+def publication_view(request, publication):
+	question_list = Question_Model.objects.filter(publication=publication)
+	return render(request, 'learn/Question_list.html',{'question_list' : question_list,})
+
+def standard_view(request, std):
+	print(std)
+	question_list = Question_Model.objects.filter(std=std)[:]
+	return render(request, 'learn/Question_list.html',{'question_list' : question_list,})
 
 
 

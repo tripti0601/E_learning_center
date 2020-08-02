@@ -9,6 +9,8 @@ urlpatterns = [
   path('search-result', views.search_view, name='search'),
   path('<int:question_id>', views.detail_view, name='detail-view'),
   path('<int:question_id>/liked', views.like_view, name='liked'),
+  path('<int:std>/Question_list/', views.standard_view, name='std-list'),
+  path('<slug:publication>', views.publication_view, name='publication-list'),
 ]
 
 if settings.DEBUG: 

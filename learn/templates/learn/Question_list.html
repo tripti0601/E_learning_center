@@ -15,8 +15,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
 <body style="background-color:#e6e2e2de;">
-    
-    <header role="banner" style="background-color:#0486f7;height: 80px;">
+            
+	<header role="banner" style="background-color:#0486f7;height: 80px;">
 	    <nav class="navbar navbar-expand-md navbar-dark">
 			<div class="container">
 			    <a class="navbar-brand" href="{% url 'home' %}">LOGO</a>
@@ -41,7 +41,7 @@
 					    	<a class="dropdown-item"  href="{% url 'publication-list' 'RD_Sharma_and_RS_Agrawal' %}" style="color:black;"> RS Agrawal</a>
 					    	<a class="dropdown-item" href="{% url 'publication-list' 'RD_Sharma_and_RS_Agrawal' %}" style="color:black;"> RD Sharma</a>
 					    	<a class="dropdown-item" href="{% url 'publication-list' 'NCERT' %}" style="color:black;"> NCERT</a>
-						    
+						   
 					    </div>
 					    </li>
 					    <li class="nav-item dropdown">
@@ -53,7 +53,7 @@
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 9</a>
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 10</a>
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 11</a>
-						    <a class="dropdown-item" href="{% url 'std-list' 12 %}"  style="color:black;">Class 12</a>
+						    <a class="dropdown-item" href="#"  style="color:black;">Class 12</a>
 						    
 					    </div>
 					    </li>
@@ -66,100 +66,43 @@
 						    <a class="dropdown-item" href="#"  style="color:black;">XII board</a>
 					    </div>
                         </li>
-					</ul>
-				            
-				</div>
-			</div>
-		</nav>
-    </header>
-            
-	<div class="d-block w-100" style="background-color:#0486f7;">          
-	            <div class="container">
-		            <div class="row slider-text justify-content-space-between">
-		              <div class="col-md-6  mb-4 col-sm-5 " style="padding: 15px;">
-		                <h1 data-aos="fade-up" style="color:white;font-family:arial;font-weight: bold;font-size:60px;">Problem?</h1>
-		                <p style="color:white;font-family:arial;font-weight: bold;font-size:20px;">Get solution of mathematics, Physics, Chemistry, Biology</p>
-		                    <form class="form-inline" action="{% url 'search'%}" method="POST">
+                        <li>
+                            <form class="form-inline" action="{% url 'search'%}" method="POST">
 					    		{% csrf_token %}
 					    		  <div>
 								     <input type="text" class="input-group-text" id="inputGroup-sizing-lg"  placeholder="Search" name="usr-input">
 								  </div>
 								  <button type="submit" name="search" class="btn btn-danger" style="font-weight: bold;"><i class="fas fa-search"></i></button>
 							</form>
-		              </div>
-		              <div class="col-md-6 mb-4 col-sm-5"style="overflow-x: right;">
-		            	<img src="media/images/detective-1424831_1280.png" height="320px" width="330px">
-		            </div>
-		            </div>
-	            </div>
-	</div>
-	<div class="service-list">
-		<div id="service-list-subdiv" class="border-right">NCERT </div>
-		<div id="service-list-subdiv"class="border-right" >NEET</div>
-		<div id="service-list-subdiv" class="border-right">IIT JEE</div>
-		<div id="service-list-subdiv" class="border-right">CLASS 6-12</div>
-		<div id="service-list-subdiv" class="border-right">BIOLOGY</div>
-		<div id="service-list-subdiv" class="border-right">MATHEMATICS</div>
-		<div id="service-list-subdiv" class="border-right">PHYSICS</div>
-		<div id="service-list-subdiv" class="border-right">CHEMISTRY</div>
-		<div id="service-list-subdiv">Board X-XII</div>
-	</div>
-	{% if class12 %}             
-	<div class="class-div">
-		<div class="row">
-			<div class="col-md-6 col-mb-8 text-right col-sm-2 " style="font-size:25px;font-weight: bolder;"><u>NCERT</u></div>
-			<div class="col-md-6 col-mb-4 text-right col-sm-2 ">
-				<button style="display: inline;" type="button" class="btn btn-success"><a href="{% url 'publication-list' 'NCERT' %}"  style="color:white;">View All</a></button>
+                        </li>
+					</ul>
+				            
+				</div>
 			</div>
-		</div>
-		<div class="specific-item-div-inner">
-			<div class="container2">
-				{% for que_solution in class12 %}
-				        <!--
-						<li><a href="/Polls/{{ question.id }}/">{{ question.question_text }}</a></li>
-						-->
-							<div>
-								<a href="{{ que_solution.get_video_url }}"><video width='400' style="filter: drop-shadow(8px 8px 10px gray);" poster>
-									<source src='media/{{ que_solution.video }}' type='video/mp4'>.
-								</video></a>
-							</div>
-				{% endfor %}
-		    </div>
-		</div>
-	</div>
-	{% else %}
-			     <p>No Product are available.</p>
-			      
-	{% endif %}
-	{% if rd_sharma %}             
-	<div class="class-div">
-		<div class="row">
-			<div class="col-md-7 col-mb-9 text-right col-sm-2 " style="font-size:25px;font-weight: bolder;"><u>RD SHARMA</u></div>
-			<div class="col-md-5 col-mb-3 text-right col-sm-2 ">
-				<button style="display: inline;" type="button" class="btn btn-success"><a href="{% url 'publication-list' 'RD_Sharma_and_RS_Agrawal' %}"  style="color:white;">View All</a></button>
+		</nav>
+    </header>
+    {% if question_list %}
+        {% for question_lst in question_list%}
+        <div id="details-div" class="row">
+        	<div class="col-md-4 text-md-center mb-4">
+				<video style="width:calc(50vh);min-width:200px;height: calc(20vh);min-height: 200px;border: 1px solid #c3c3c3;" controls>
+				<source src='media/{{ question_lst.video }}' type='video/mp4'>
+				</video></a>
 			</div>
-		</div>
-		<div class="specific-item-div-inner">
-			<div class="container2">
-				{% for que_solution in rd_sharma %}
-				        <!--
-						<li><a href="/Polls/{{ question.id }}/">{{ question.question_text }}</a></li>
-						-->
-							<div style="box-shadow: 5px 5px grey inset;">
-								<a href="{{ que_solution.get_video_url }}"><video width='400' poster style="filter: drop-shadow(8px 8px 10px gray);">
-									<source src='media/{{ que_solution.video }}' type='video/mp4'>.
-								</video></a>
-							</div>
-				{% endfor %}
-		    </div>
-		</div>
-	</div>
-	{% else %}
-			     <p>No Product are available.</p>
-			      
-	{% endif %}
-
-
+        	<a href="{{ question_lst.get_video_url }}" style="color:#000000e6;"><div class="col-md-7 mb-7">
+					<h4 style="font-size: 19px;"><i class="fas fa-caret-right"></i>{{ question_lst.publication }}
+					      <b>/</b>Class {{ question_lst.std }} <b>/</b>{{ question_lst.unit_name}} <b>/</b>Exercise {{ question_lst.exercise }} <b>/</b>Question {{ question_lst.Question_no }}</h4>
+					<img src="https://latex.codecogs.com/png.latex?{{ question_lst.Question}}" style="width:auto; filter: grayscale(100%);">
+			</div></a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div>
+        	<h3>There is no Question from this publication</h3>
+        </div>
+    {% endif %}
+    
+    
 	<footer class="site-footer" role="contentinfo" style="background-color: #162337;color: white;padding-top: 1%">
       <div class="container3">
         <div class="row mb-12">
@@ -218,9 +161,5 @@
           </div>
         </div>
     </footer>
-</body>
-</html>
-<!--justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;->
-
 </body>
 </html>

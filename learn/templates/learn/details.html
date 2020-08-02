@@ -38,18 +38,9 @@
 					    <li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Study Material</a>
 					    <div class="dropdown-menu" aria-labelledby="dropdown04">
-					    	<a class="dropdown-item"  href="{% url 'home' %}" style="color:black;"> RS Agrawal</a>
-					    	<a class="dropdown-item"  href="{% url 'home' %}" style="color:black;"> RD Sharma</a>
-						    <a  class="dropdown-item"  href="{% url 'home' %}" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black;">NCERT</a>
-						    <ul class="dropdown-menu" aria-labelledby="dropdown05">
-						    	<li><a class="dropdown-item" href="#"  style="color:black;">Class 6</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 7</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 8</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 9</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 10</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 11</a></li>
-							    <li><a class="dropdown-item" href="#"  style="color:black;">Class 12</a></li>	
-						    </ul>
+					    	<a class="dropdown-item"  href="{% url 'publication-list' 'RD_Sharma_and_RS_Agrawal' %}" style="color:black;"> RS Agrawal</a>
+					    	<a class="dropdown-item" href="{% url 'publication-list' 'RD_Sharma_and_RS_Agrawal' %}" style="color:black;"> RD Sharma</a>
+					    	<a class="dropdown-item" href="{% url 'publication-list' 'NCERT' %}" style="color:black;"> NCERT</a>
 					    </div>
 					    </li>
 					    <li class="nav-item dropdown">
@@ -96,7 +87,7 @@
 					<tr>
 					<td><h4 style="font-size: 19px;"><i class="fas fa-caret-right"></i>{{ question.publication }}
 					      <b>/</b>Class {{ question.std }} <b>/</b>{{ question.unit_name}} <b>/</b>Exercise {{ question.exercise }} <b>/</b>Question {{ question.Question_no }}</h4>
-						Q. <img src="https://latex.codecogs.com/png.latex?{{ question.Question}}" style="width:auto; filter: grayscale(100%);">
+						Q. <img src="https://latex.codecogs.com/png.latex?{{ question.Question}}" style="width:auto; filter: grayscale(100%);filter: saturate(1000%);">
 					</td>
 					</tr>
 					<tr>
@@ -108,7 +99,7 @@
 					<tr>
 					<td><div>
 							<p><i style="font-size: 20px;" class="far fa-eye" id="btnClick" onclick="CountFun();"></i> | {{ question.like }} people liked this Solution</p>
-							<h3><a href="{{ question.get_question_url }}"><i class="far fa-thumbs-up"> Like</i></a> | <i class="fas fa-share-square"></i></h3>
+							<h3><a href="{{ question.get_question_url }}"><i class="far fa-thumbs-up"> Like</i></a> | <i class="fas fa-share-square">Share</i></h3>
 						</div></td>
 					</tr>
 				</table>
