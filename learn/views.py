@@ -26,6 +26,18 @@ def search_view(request):
 	 	return redirect('home')
 
 
+def like_view(request, question_id):
+	print(question_id)
+	try:
+		question = Question_Model.objects.get(id=question_id)
+		question.like += 1
+		question.save()
+		return reverse('detail-view', kwargs={'question_id':question_id})
+	except Question_Model.DoesNotExist:
+		raise Http404("Solution does not exist")
+	finally:
+		return redirect('home')
+
 
 
 
