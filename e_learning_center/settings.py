@@ -76,11 +76,8 @@ WSGI_APPLICATION = 'e_learning_center.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME' : 'E_learning_center',
-        'USER' : 'root',
-        'HOST' : '127.0.0.1',
-        'PORT' : '3306',
     }
 }
 

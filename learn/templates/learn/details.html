@@ -52,7 +52,7 @@
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 9</a>
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 10</a>
 						    <a class="dropdown-item" href="#"  style="color:black;">Class 11</a>
-						    <a class="dropdown-item" href="#"  style="color:black;">Class 12</a>
+						    <a class="dropdown-item" href="{% url 'std-list' 12 %}"  style="color:black;">Class 12</a>
 						    
 					    </div>
 					    </li>
@@ -98,7 +98,7 @@
 					</tr>
 					<tr>
 					<td><div>
-							<p><i style="font-size: 20px;" class="far fa-eye" id="btnClick" onclick="CountFun();"></i> | {{ question.like }} people liked this Solution</p>
+							<p>{{ question.like }} people liked<i class="far fa-thumbs-up"></i> this Solution</p>
 							<h3><a href="{{ question.get_question_url }}"><i class="far fa-thumbs-up"> Like</i></a> | <i class="fas fa-share-square">Share</i></h3>
 						</div></td>
 					</tr>
